@@ -1,0 +1,46 @@
+{
+  "name": "Alert",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "opportunity",
+        "acceleration",
+        "sentiment_shift",
+        "competitor_response",
+        "decline"
+      ],
+      "default": "opportunity"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ],
+      "default": "MEDIUM"
+    },
+    "signal_id": {
+      "type": "string"
+    },
+    "signal_topic": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "read": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "title",
+    "message"
+  ]
+}

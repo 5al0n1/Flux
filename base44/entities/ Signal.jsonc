@@ -1,0 +1,135 @@
+{
+  "name": "Signal",
+  "type": "object",
+  "properties": {
+    "topic": {
+      "type": "string",
+      "description": "The trend topic / signal name"
+    },
+    "category": {
+      "type": "string",
+      "description": "Industry category"
+    },
+    "score": {
+      "type": "number",
+      "description": "Signal Quality Score 0-100"
+    },
+    "urgency": {
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ],
+      "default": "MEDIUM"
+    },
+    "mention_growth": {
+      "type": "number",
+      "description": "Mention volume growth percentage"
+    },
+    "sentiment_positive": {
+      "type": "number",
+      "description": "Positive sentiment percentage"
+    },
+    "sentiment_negative": {
+      "type": "number",
+      "description": "Negative sentiment percentage"
+    },
+    "sentiment_neutral": {
+      "type": "number",
+      "description": "Neutral sentiment percentage"
+    },
+    "velocity": {
+      "type": "number",
+      "description": "Velocity multiplier e.g. 1.4"
+    },
+    "velocity_label": {
+      "type": "string",
+      "enum": [
+        "Accelerating",
+        "Stable",
+        "Declining"
+      ],
+      "default": "Stable"
+    },
+    "competitors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Competitor activity entries"
+    },
+    "competitor_count": {
+      "type": "number",
+      "default": 0
+    },
+    "competition_level": {
+      "type": "string",
+      "enum": [
+        "High",
+        "Medium",
+        "Low"
+      ],
+      "default": "Medium"
+    },
+    "lifecycle": {
+      "type": "string",
+      "enum": [
+        "Emerging",
+        "Peaking",
+        "Mature",
+        "Declining"
+      ],
+      "default": "Emerging"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "watch",
+        "archived"
+      ],
+      "default": "active"
+    },
+    "recommendation": {
+      "type": "string",
+      "description": "FLUX recommendation summary"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Short signal summary"
+    },
+    "white_space": {
+      "type": "string",
+      "description": "White space opportunity"
+    },
+    "trend_dates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "trend_mentions": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "trend_sentiment": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Data sources cited"
+    }
+  },
+  "required": [
+    "topic"
+  ]
+}
